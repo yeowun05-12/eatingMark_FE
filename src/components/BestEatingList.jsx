@@ -5,9 +5,8 @@ function BestEatingList({ places }) {
       <ul className='eat_list'>
         {places.map((el) => {
           return (
-            <li>
+            <li key={el.id}>
               <img
-                key={el.id}
                 src={`http://localhost:3000/${el.image.src}`}
                 alt={el.image.alt}
               ></img>
