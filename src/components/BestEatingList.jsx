@@ -14,7 +14,7 @@ function BestEatingList() {
         ) : sortedPlaces.length > 0 ? (
           <StoreList place={sortedPlaces} />
         ) : (
-          <p> 주변 맛집 찾는 중...</p>
+          <p className='loading'> 주변 맛집 찾는 중...</p>
         )}
       </ul>
     </section>

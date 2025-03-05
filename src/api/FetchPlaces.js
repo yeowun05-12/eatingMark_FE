@@ -1,22 +1,23 @@
 async function FetchPlaces() {
   try {
-    const response = await fetch('http://localhost:3000/places');
+    const response = await fetch('http://localhost:3000/placess');
 
     if (!response.ok) {
-      switch (response.status) {
-        case 404:
-          throw new Error('요청하신 데이터를 찾을 수 없습니다 (404)');
-        default:
-          throw new Error('서버에서 데이터를 불러오지 못했습니다.');
+      if(response.status >= 400 && response.status < 500){
+        throw new Error(`클라이언트 오류 발생 (${response.status})`);
+      }else if(response.status > 500){
+        throw new Error(`서버 오류 발생 (${response.status})`);
+      }else{
+        throw new Error(`알 수 없는 오류가 발생했습니다.)`); 
       }
     }
-
     const data = await response.json();
     return data.places;
-  } catch (error) {
-    console.log('데이터 가져오기 실패', error);
-    throw error;
+    }catch (error) {
+      console.log('데이터 가져오기 실패', error);
+      throw error;
+  } 
   }
-}
+
 
 export default FetchPlaces;
