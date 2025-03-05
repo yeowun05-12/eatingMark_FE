@@ -30,7 +30,7 @@ header {
 }
 
 nav {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
   padding: 12px 0;
 }
@@ -66,6 +66,7 @@ section {
   padding: 50px;
 }
 
+/* 찜 목록 */
 .like_eat {
   width: 50vw;
   list-style: none;
@@ -88,6 +89,12 @@ section {
   border-radius: 10px; /* 둥근 모서리 (선택 사항) */
 }
 
+.null_like {
+  margin: 15px 0;
+  color: rgb(209, 209, 209);
+}
+
+/* 맛집 리스트 */
 .eat_list {
   width: 50vw;
   list-style: none;
@@ -109,4 +116,11 @@ section {
   height: 200px;
   object-fit: cover; /* 이미지 비율 유지하면서 꽉 차게 조절 */
   border-radius: 10px; /* 둥근 모서리 (선택 사항) */
+}
+
+/* 로딩 중*/
+.loading {
+  font-size: 20px;
+  margin: 0 auto;
+  color: rgb(255, 128, 0);
 }
